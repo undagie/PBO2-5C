@@ -2,54 +2,52 @@ package pertemuan2;
 
 public class Mahasiswa {
     //membuat atribut
-    String nama, npm;
-    int umur;
-    
-    //membuat constructor
-    Mahasiswa(){
-        System.out.println("Menjalankan konstruktor mahasiswa");
-    }
-    
-    Mahasiswa(String nama, String npm, int umur){
+    private String nama, npm;
+    private int umur;
+
+    public Mahasiswa(String nama, String npm, int umur) {
         this.nama = nama;
         this.npm = npm;
         this.umur = umur;
     }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getNpm() {
+        return npm;
+    }
+
+    public void setNpm(String npm) {
+        this.npm = npm;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        if(umur>0){
+            this.umur = umur;
+        }
+    }
     
-    //method untuk menampilkan data
-    void tampilData(){
+    public void tampilData(){
         System.out.println("Nama: "+nama);
         System.out.println("NPM: "+npm);
         System.out.println("Umur: "+umur);
     }
     
-    //membuat method setter
-    void setNama(String nama){
-        this.nama = nama;
+    //polimorfisme bertipe overloading
+    public void tampilData(String kelas){
+        tampilData();
+        System.out.println("Kelas: "+kelas);
     }
     
-    //membuat method accessor
-    String getNama(){
-        return nama;
-    }
     
-    //membuat method setter
-    void setNpm(String npm){
-        this.npm = npm;
-    }
-    
-    //membuat method accessor
-    String getNpm(){
-        return npm;
-    }
-    
-    //membuat method setter
-    void setUmur(int umur){
-        this.umur = umur;
-    }
-    
-    //membuat method accessor
-    int getUmur(){
-        return umur;
-    }
 }
